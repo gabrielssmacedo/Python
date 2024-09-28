@@ -1,0 +1,5 @@
+Maior: 5
+Menor: 2
+Total Numeros: 5
+Soma Total: 17
+Media Total: 3.4
