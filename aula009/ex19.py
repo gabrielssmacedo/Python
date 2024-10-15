@@ -6,24 +6,25 @@ necessário usar o método insert da lista – pesquise sobre ele.
 """
 
 Lista = []
-
-Valor = int(input("Valor: "))
-Iniciando = True
-
+Valor = int(input(" Valor: "))
 if Valor > 0:
-    if Iniciando:
-        Lista.append(Valor)
-        Iniciando = False
-    while Iniciando == False and Valor > 0:
-        k = 0
-        while True:
-            if Lista[k] > Valor:
-                Lista.insert(k, Valor)
-                break
-            k += 1
-        Valor = int(input("Valor: "))
+    Lista.append(Valor)
+    Valor = int(input(" Valor: "))
+    while Valor > 0:
+        i = 0
+        Inseriu = False
+        while not Inseriu and i < len(Lista):
+            if Valor < Lista[i]:
+                Lista.insert(i, Valor)
+                Inseriu = True
+            i += 1
+        if not Inseriu:
+            Lista.append(Valor)
+        Valor = int(input(" Valor: "))
+    print('\nSua Lista:')
+    for k in Lista:
+        print(k, end="  ")
+else:
+    print('\nSua Lista está vazia!')
 
-if Iniciando:
-    print("Sua lista está vazia!")
-
-print("\nFim do programa")
+print("\n\nFim do programa")
